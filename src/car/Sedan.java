@@ -1,6 +1,6 @@
 package car;
 
-import static car.Car.CarType.SEDAN;
+import static car.Car.Type.SEDAN;
 
 public class Sedan extends Car {
 

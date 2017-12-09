@@ -10,24 +10,24 @@ public abstract class Car {
     public double winterFuelConsumption;
     public double winterWarmingUp;
 
-    private CarType type;
+    private Type type;
 
     private boolean driverAvailable;
     private int numberOfPassengers;
 
-    protected Car(CarType type, int numberOfPassengers) {
+    protected Car(Type type, int numberOfPassengers) {
         this.type = type;
         this.numberOfPassengers = numberOfPassengers;
     }
 
-    public static Car create(CarType type, int numberOfPassengers) {
+    public static Car create(Type type, int numberOfPassengers) {
         switch (type) {
             case TRUCK:
                 return new Truck(numberOfPassengers);
             case SEDAN:
                 return new Sedan(numberOfPassengers);
             case CABRIOLET:
-                return new Sedan(numberOfPassengers);
+                return new Cabriolet(numberOfPassengers);
             default:
                 return null;
         }
@@ -89,7 +89,7 @@ public abstract class Car {
         return isDriverAvailable()  && fuel > 0.0;
     }
 
-    enum CarType {
+    public enum Type {
         TRUCK, SEDAN, CABRIOLET
     }
 }

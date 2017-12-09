@@ -1,6 +1,6 @@
 package car;
 
-import static car.Car.CarType.CABRIOLET;
+import static car.Car.Type.CABRIOLET;
 
 public class Cabriolet extends Car {
 
