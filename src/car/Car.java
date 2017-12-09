@@ -2,10 +2,6 @@ package car;
 
 import java.util.Date;
 
-import static car.Car.CarType.CABRIOLET;
-import static car.Car.CarType.SEDAN;
-import static car.Car.CarType.TRUCK;
-
 public abstract class Car {
 
     double fuel;
@@ -25,13 +21,16 @@ public abstract class Car {
     }
 
     public static Car create(CarType type, int numberOfPassengers) {
-        if (type == TRUCK)
-            return new Truck(numberOfPassengers);
-        if (type == SEDAN)
-            return new Sedan(numberOfPassengers);
-        if (type == CABRIOLET)
-            return new Cabriolet(numberOfPassengers);
-        return null;
+        switch (type) {
+            case TRUCK:
+                return new Truck(numberOfPassengers);
+            case SEDAN:
+                return new Sedan(numberOfPassengers);
+            case CABRIOLET:
+                return new Sedan(numberOfPassengers);
+            default:
+                return null;
+        }
     }
 
     public void fill(double numberOfLiters) {
