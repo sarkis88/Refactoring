@@ -38,14 +38,10 @@ public abstract class Car {
         fuel += numberOfLiters;
     }
 
-    public double getTripConsumption(Date date, int length, Date SummerStart, Date SummerEnd) {
-        double consumption;
-        if (!isSummer(date, SummerStart, SummerEnd)) {
-            consumption = getWinterConsumption(length);
-        } else {
-            consumption = getSummerConsumption(length);
-        }
-        return consumption;
+    public double getTripConsumption(Date date, int length, Date summerStart, Date summerEnd) {
+        if (!isSummer(date, summerStart, summerEnd))
+            return getWinterConsumption(length);
+        return getSummerConsumption(length);
     }
 
     public int getNumberOfPassengersCanBeTransferred() {
