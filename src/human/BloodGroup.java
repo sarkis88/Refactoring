@@ -1,29 +1,17 @@
 package human;
 
-public class BloodGroup {
+public enum BloodGroup {
+
+    FIRST(1), SECOND(2), THIRD(3), FOURTH(4);
+
+    BloodGroup(int code) {
+        this.code = code;
+    }
+
     private final int code;
 
     public int getCode() {
         return code;
     }
 
-    private BloodGroup(int code) {
-        this.code = code;
-    }
-
-    public static BloodGroup first() {
-        return new BloodGroup(1);
-    }
-
-    public static BloodGroup second() {
-        return new BloodGroup(2);
-    }
-
-    public static BloodGroup third() {
-        return new BloodGroup(3);
-    }
-
-    public static BloodGroup fourth() {
-        return new BloodGroup(4);
-    }
 }
