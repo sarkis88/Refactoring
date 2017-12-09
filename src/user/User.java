@@ -4,7 +4,7 @@ public class User {
     private String name;
     private String surname;
     private int age;
-    private boolean man;
+    private UserSex sex;
 
     private Address address;
     private Work work;
@@ -19,12 +19,12 @@ public class User {
         this.address = address;
     }
 
-    public boolean isMan() {
-        return man;
+    public UserSex getSex() {
+        return sex;
     }
 
-    public void setMan(boolean man) {
-        this.man = man;
+    public void setSex(UserSex sex) {
+        this.sex = sex;
     }
 
     public String getCountry() {
