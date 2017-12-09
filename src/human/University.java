@@ -9,14 +9,7 @@ public class University {
 
     private List<Student> students = new ArrayList<>();
 
-    public static Comparator<Student> studentComparator = new Comparator<Student>() {
-        @Override
-        public int compare(Student o1, Student o2) {
-            return Double.compare(o1.getAverageGrade(), o2.getAverageGrade());
-        }
-    };
-
-
+    public static Comparator<Student> studentComparator = Comparator.comparingDouble(Student::getAverageGrade);
 
     public University(List<Student> students, String name, int age) {
         this.students = students;

@@ -1,5 +1,7 @@
 package car;
 
+import static car.Car.CarType.SEDAN;
+
 public class Sedan extends Car {
 
     private final static int MAX_SEDAN_SPEED = 120;
@@ -9,7 +11,7 @@ public class Sedan extends Car {
         return MAX_SEDAN_SPEED;
     }
 
-    public Sedan(int numberOfPassengers) {
+    Sedan(int numberOfPassengers) {
         super(SEDAN, numberOfPassengers);
     }
 }

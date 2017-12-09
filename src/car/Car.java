@@ -2,10 +2,11 @@ package car;
 
 import java.util.Date;
 
+import static car.Car.CarType.CABRIOLET;
+import static car.Car.CarType.SEDAN;
+import static car.Car.CarType.TRUCK;
+
 public abstract class Car {
-    static public final int TRUCK = 0;
-    static public final int SEDAN = 1;
-    static public final int CABRIOLET = 2;
 
     double fuel;
 
@@ -13,17 +14,17 @@ public abstract class Car {
     public double winterFuelConsumption;
     public double winterWarmingUp;
 
-    private int type;
+    private CarType type;
 
     private boolean driverAvailable;
     private int numberOfPassengers;
 
-    protected Car(int type, int numberOfPassengers) {
+    protected Car(CarType type, int numberOfPassengers) {
         this.type = type;
         this.numberOfPassengers = numberOfPassengers;
     }
 
-    public static Car create(int type, int numberOfPassengers) {
+    public static Car create(CarType type, int numberOfPassengers) {
         if (type == TRUCK)
             return new Truck(numberOfPassengers);
         if (type == SEDAN)
@@ -91,5 +92,9 @@ public abstract class Car {
 
     private boolean canPassengersBeTransferred() {
         return isDriverAvailable()  && fuel > 0.0;
+    }
+
+    enum CarType {
+        TRUCK, SEDAN, CABRIOLET
     }
 }

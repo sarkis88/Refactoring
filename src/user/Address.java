@@ -6,6 +6,15 @@ public class Address {
     private String city;
     private String house;
 
+    public Address() {
+    }
+
+    public Address(String country, String city, String house) {
+        this.country = country;
+        this.city = city;
+        this.house = house;
+    }
+
     public String getCountry() {
         return country;
     }

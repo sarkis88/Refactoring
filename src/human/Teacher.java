@@ -8,6 +8,14 @@ public class Teacher extends UniversityPerson {
         this.numberOfStudents = numberOfStudents;
     }
 
+    public int getNumberOfStudents() {
+        return numberOfStudents;
+    }
+
+    public void setNumberOfStudents(int numberOfStudents) {
+        this.numberOfStudents = numberOfStudents;
+    }
+
     public void live() {
         teach();
     }
